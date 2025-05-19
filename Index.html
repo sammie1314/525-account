@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>525 我愛我自己集點活動</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      text-align: center;
+      padding: 2em;
+      background: #fff5f5;
+      color: #333;
+    }
+    .box {
+      background: white;
+      padding: 2em;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .ref {
+      margin-top: 1em;
+      font-weight: bold;
+      color: #e67e22;
+    }
+    a.button {
+      display: inline-block;
+      padding: 0.7em 1.5em;
+      background: #e74c3c;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>🎉 525 我愛我自己｜集點活動上線！</h1>
+    <p>加入小確幸星球社群，開始你的能量旅程✨</p>
+    <ul style="text-align: left;">
+      <li>📌 邀請朋友進群：<b>+3點</b></li>
+      <li>📌 每日分享金句：<b>+1點</b></li>
+      <li>📌 活動任務參加：<b>驚喜點數</b></li>
+    </ul>
+    <a class="button" href="https://reurl.cc/NYEbp6">👉 點我加入社群</a>
+    <p class="ref" id="refText"></p>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const ref = urlParams.get("ref");
+    if (ref) {
+      document.getElementById("refText").innerText = "✨ 你的推薦人是：" + ref;
+    }
+  </script>
+</body>
+</html>
