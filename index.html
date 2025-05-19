@@ -1,19 +1,38 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>525 我愛我自己集點活動</title>
-  </head>
-  <body>
-    <h1>歡迎來到 525 集點活動頁面</h1>
-    <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const ref = urlParams.get("ref");
-      if (ref) {
-        const note = document.createElement("p");
-        note.textContent = `✨ 你的推薦人是：${ref}`;
-        document.body.appendChild(note);
-      }
-    </script>
-  </body>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>525 我愛我自己｜推薦集點頁</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #fff6f6;
+      color: #333;
+    }
+    h1 {
+      color: #e91e63;
+    }
+    .message {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 歡迎參加 525「我愛我自己」活動</h1>
+  <p class="message">推薦人資料已成功記錄，感謝你的支持！</p>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const ref = urlParams.get("ref") || "未填寫";
+
+    fetch(`https://script.google.com/macros/s/AKfycbzMhSu6wD1Bdyd63u6xV1HV-ko0Yk6PxvfbNa-bS72uTicZv774Eg4ht5zwJqmupd57Qw/exec?ref=${encodeURIComponent(ref)}`)
+      .then(res => res.text())
+      .then(msg => console.log(msg))
+      .catch(err => console.error("推薦人記錄失敗", err));
+  </script>
+</body>
 </html>
