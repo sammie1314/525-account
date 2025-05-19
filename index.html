@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>525 我愛我自己集點活動</title>
+  </head>
+  <body>
+    <h1>歡迎來到 525 集點活動頁面</h1>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const ref = urlParams.get("ref");
+      if (ref) {
+        const note = document.createElement("p");
+        note.textContent = `✨ 你的推薦人是：${ref}`;
+        document.body.appendChild(note);
+      }
+    </script>
+  </body>
+</html>
